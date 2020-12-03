@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Dashboard</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body class="antialiased font-sans bg-gray-200">
+    <nav class="bg-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <img class="h-8 w-8" src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg"
+                            alt="Workflow">
+                    </div>
+                    <div class="hidden md:block">
+                        <div class="ml-10 flex items-baseline space-x-4">
+                            <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+                            <a href="#"
+                                class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium">Dashboard</a>
+
+                            <a href="#"
+                                class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Team</a>
+
+                            <a href="#"
+                                class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Projects</a>
+
+                            <a href="#"
+                                class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Calendar</a>
+
+                            <a href="#"
+                                class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Reports</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-4 flex items-center md:ml-6">
+                        <button
+                            class="bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
+                            <span class="sr-only">View notifications</span>
+                            <!-- Heroicon name: bell -->
+                            <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+                            </svg>
+                        </button>
+
+                        <!-- Profile dropdown -->
+                        <div class="ml-3 relative">
+                            <div>
+                                <button
+                                    class="max-w-xs bg-gray-800 rounded-full flex items-center text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
+                                    id="user-menu" aria-haspopup="true">
+                                    <span class="sr-only">Open user menu</span>
+                                    <img class="h-8 w-8 rounded-full"
+                                        src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                                        alt="">
+                                </button>
+                            </div>
+                            <!--
+                                Profile dropdown panel, show/hide based on dropdown state.
+                
+                                Entering: "transition ease-out duration-100"
+                                From: "transform opacity-0 scale-95"
+                                To: "transform opacity-100 scale-100"
+                                Leaving: "transition ease-in duration-75"
+                                From: "transform opacity-100 scale-100"
+                                To: "transform opacity-0 scale-95"
+                            -->
+                            <div class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5"
+                                role="menu" aria-orientation="vertical" aria-labelledby="user-menu">
+                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                                    role="menuitem">Your Profile</a>
+
+                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                                    role="menuitem">Settings</a>
+
+                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                                    role="menuitem">Sign out</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="-mr-2 flex md:hidden">
+                    <!-- Mobile menu button -->
+                    <button
+                        class="bg-gray-800 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
+                        <span class="sr-only">Open main menu</span>
+                        <!--
+                        Heroicon name: menu
+            
+                        Menu open: "hidden", Menu closed: "block"
+                        -->
+                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                        <!--
+                        Heroicon name: x
+            
+                        Menu open: "block", Menu closed: "hidden"
+                        -->
+                        <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!--
+          Mobile menu, toggle classes based on menu state.
+    
+          Open: "block", closed: "hidden"
+        -->
+        <div class="hidden md:hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+                <a href="#"
+                    class="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium">Dashboard</a>
+
+                <a href="#"
+                    class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Team</a>
+
+                <a href="#"
+                    class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Projects</a>
+
+                <a href="#"
+                    class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Calendar</a>
+
+                <a href="#"
+                    class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Reports</a>
+            </div>
+            <div class="pt-4 pb-3 border-t border-gray-700">
+                <div class="flex items-center px-5">
+                    <div class="flex-shrink-0">
+                        <img class="h-10 w-10 rounded-full"
+                            src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                            alt="">
+                    </div>
+                    <div class="ml-3">
+                        <div class="text-base font-medium leading-none text-white">Tom Cook</div>
+                        <div class="text-sm font-medium leading-none text-gray-400">tom@example.com</div>
+                    </div>
+                    <button
+                        class="ml-auto bg-gray-800 flex-shrink-0 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
+                        <span class="sr-only">View notifications</span>
+                        <!-- Heroicon name: bell -->
+                        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="mt-3 px-2 space-y-1">
+                    <a href="#"
+                        class="block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:text-white hover:bg-gray-700">Your
+                        Profile</a>
+
+                    <a href="#"
+                        class="block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:text-white hover:bg-gray-700">Settings</a>
+
+                    <a href="#"
+                        class="block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:text-white hover:bg-gray-700">Sign
+                        out</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header class="bg-white shadow">
+        <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+            <h1 class="text-3xl font-bold leading-tight text-gray-900">
+                Dashboard
+            </h1>
+        </div>
+    </header>
+    <div class="bg-indigo-600">
+        <div class="max-w-7xl mx-auto py-3 px-3 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between flex-wrap">
+                <div class="w-0 flex-1 flex items-center">
+                    <span class="flex p-2 rounded-lg bg-indigo-800">
+                        <!-- Heroicon name: speakerphone -->
+                        <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z" />
+                        </svg>
+                    </span>
+                    <p class="ml-3 font-medium text-white truncate">
+                        <span class="md:hidden">
+                            We announced a new product!
+                        </span>
+                        <span class="hidden md:inline">
+                            Big news! We're excited to announce a brand new product.
+                        </span>
+                    </p>
+                </div>
+                <div class="order-3 mt-2 flex-shrink-0 w-full sm:order-2 sm:mt-0 sm:w-auto">
+                    <a href="#"
+                        class="flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-indigo-600 bg-white hover:bg-indigo-50">
+                        Learn more
+                    </a>
+                </div>
+                <div class="order-2 flex-shrink-0 sm:order-3 sm:ml-3">
+                    <button type="button"
+                        class="-mr-1 flex p-2 rounded-md hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-white sm:-mr-2">
+                        <span class="sr-only">Dismiss</span>
+                        <!-- Heroicon name: x -->
+                        <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <main>
+        <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+
+            <div class="mt-10 sm:mt-0">
+                <div class="md:grid md:grid-cols-3 md:gap-6">
+                    <div class="md:col-span-1">
+                        <div class="px-4 sm:px-0">
+                            <h3 class="text-lg font-medium leading-6 text-gray-900">Personal Information</h3>
+                            <p class="mt-1 text-sm text-gray-600">
+                                Use a permanent address where you can receive mail.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="mt-5 md:mt-0 md:col-span-2">
+                        <form action="#" method="POST">
+                            <div class="shadow overflow-hidden sm:rounded-md">
+                                <div class="px-4 py-5 bg-white sm:p-6">
+                                    <div class="grid grid-cols-6 gap-6">
+                                        <div class="col-span-6 sm:col-span-3">
+                                            <label for="first_name"
+                                                class="block text-sm font-medium text-gray-700">First name</label>
+                                            <input type="text" name="first_name" id="first_name"
+                                                autocomplete="given-name"
+                                                class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
+                                        </div>
+
+                                        <div class="col-span-6 sm:col-span-3">
+                                            <label for="last_name" class="block text-sm font-medium text-gray-700">Last
+                                                name</label>
+                                            <input type="text" name="last_name" id="last_name"
+                                                autocomplete="family-name"
+                                                class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
+                                        </div>
+
+                                        <div class="col-span-6 sm:col-span-4">
+                                            <label for="email_address"
+                                                class="block text-sm font-medium text-gray-700">Email address</label>
+                                            <input type="email" name="email_address" id="email_address"
+                                                autocomplete="email"
+                                                class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
+                                        </div>
+
+                                        <div class="col-span-6 sm:col-span-3">
+                                            <label for="country" class="block text-sm font-medium text-gray-700">Country
+                                                / Region</label>
+                                            <select id="country" name="country" autocomplete="country"
+                                                class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                                                <option>United States</option>
+                                                <option>Canada</option>
+                                                <option>Mexico</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="col-span-6">
+                                            <label for="street_address"
+                                                class="block text-sm font-medium text-gray-700">Street address</label>
+                                            <input type="text" name="street_address" id="street_address"
+                                                autocomplete="street-address"
+                                                class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
+                                        </div>
+
+                                        <div class="col-span-6 sm:col-span-6 lg:col-span-2">
+                                            <label for="city"
+                                                class="block text-sm font-medium text-gray-700">City</label>
+                                            <input type="text" name="city" id="city"
+                                                class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
+                                        </div>
+
+                                        <div class="col-span-6 sm:col-span-3 lg:col-span-2">
+                                            <label for="state" class="block text-sm font-medium text-gray-700">State /
+                                                Province</label>
+                                            <input type="text" name="state" id="state"
+                                                class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
+                                        </div>
+
+                                        <div class="col-span-6 sm:col-span-3 lg:col-span-2">
+                                            <label for="postal_code" class="block text-sm font-medium text-gray-700">ZIP
+                                                / Postal</label>
+                                            <input type="text" name="postal_code" id="postal_code"
+                                                autocomplete="postal-code"
+                                                class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="px-4 py-3 bg-gray-50 flex justify-between sm:px-6">
+                                    <button type="button"
+                                        class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-red-600 hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                        Deactivate account
+                                    </button>
+                                    <button type="submit"
+                                        class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                        Save
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hidden sm:block" aria-hidden="true">
+                <div class="py-5">
+                    <div class="border-t border-gray-200"></div>
+                </div>
+            </div>
+
+            <div class="mt-10 sm:mt-0">
+                <div class="md:grid md:grid-cols-3 md:gap-6">
+                    <div class="md:col-span-1">
+                        <div class="px-4 sm:px-0">
+                            <h3 class="text-lg font-medium leading-6 text-gray-900">Profile</h3>
+                            <p class="mt-1 text-sm text-gray-600">
+                                This information will be displayed publicly so be careful what you share.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="mt-5 md:mt-0 md:col-span-2">
+                        <form action="#" method="POST">
+                            <div class="shadow sm:rounded-md sm:overflow-hidden">
+                                <div class="px-4 py-5 bg-white space-y-6 sm:p-6">
+                                    <div class="grid grid-cols-3 gap-6">
+                                        <div class="col-span-3 sm:col-span-2">
+                                            <label for="company_website" class="block text-sm font-medium text-gray-700">
+                                                Website
+                                            </label>
+                                            <div class="mt-1 flex rounded-md shadow-sm">
+                                                <span
+                                                    class="inline-flex items-center px-3 rounded-l-md border border-r-0 border-gray-300 bg-gray-50 text-gray-500 text-sm">
+                                                    http://
+                                                </span>
+                                                <input type="text" name="company_website" id="company_website"
+                                                    class="focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full rounded-none rounded-r-md sm:text-sm border-gray-300"
+                                                    placeholder="www.example.com">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <label for="about" class="block text-sm font-medium text-gray-700">
+                                            About
+                                        </label>
+                                        <div class="mt-1">
+                                            <textarea id="about" name="about" rows="3"
+                                                class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border-gray-300 rounded-md"
+                                                placeholder="you@example.com"></textarea>
+                                        </div>
+                                        <p class="mt-2 text-sm text-gray-500">
+                                            Brief description for your profile. URLs are hyperlinked.
+                                        </p>
+                                    </div>
+
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700">
+                                            Photo
+                                        </label>
+                                        <div class="mt-2 flex items-center">
+                                            <span class="inline-block h-12 w-12 rounded-full overflow-hidden bg-gray-100">
+                                                <svg class="h-full w-full text-gray-300" fill="currentColor"
+                                                    viewBox="0 0 24 24">
+                                                    <path
+                                                        d="M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0 018 0z" />
+                                                </svg>
+                                            </span>
+                                            <button type="button"
+                                                class="ml-5 bg-white py-2 px-3 border border-gray-300 rounded-md shadow-sm text-sm leading-4 font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                                Change
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700">
+                                            Cover photo
+                                        </label>
+                                        <div
+                                            class="mt-2 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
+                                            <div class="space-y-1 text-center">
+                                                <svg class="mx-auto h-12 w-12 text-gray-400" stroke="currentColor"
+                                                    fill="none" viewBox="0 0 48 48" aria-hidden="true">
+                                                    <path
+                                                        d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02"
+                                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                                </svg>
+                                                <div class="flex text-sm text-gray-600">
+                                                    <label for="file-upload"
+                                                        class="relative cursor-pointer bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500">
+                                                        <span>Upload a file</span>
+                                                        <input id="file-upload" name="file-upload" type="file"
+                                                            class="sr-only">
+                                                    </label>
+                                                    <p class="pl-1">or drag and drop</p>
+                                                </div>
+                                                <p class="text-xs text-gray-500">
+                                                    PNG, JPG, GIF up to 10MB
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
+                                    <button type="submit"
+                                        class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                        Save
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <div class="fixed z-10 inset-0 overflow-y-auto">
+        <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+            <!--
+            Background overlay, show/hide based on modal state.
+    
+            Entering: "ease-out duration-300"
+            From: "opacity-0"
+            To: "opacity-100"
+            Leaving: "ease-in duration-200"
+            From: "opacity-100"
+            To: "opacity-0"
+            -->
+            <div class="fixed inset-0 transition-opacity" aria-hidden="true">
+                <div class="absolute inset-0 bg-gray-500 opacity-75"></div>
+            </div>
+
+            <!-- This element is to trick the browser into centering the modal contents. -->
+            <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+            <!--
+            Modal panel, show/hide based on modal state.
+      
+            Entering: "ease-out duration-300"
+              From: "opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+              To: "opacity-100 translate-y-0 sm:scale-100"
+            Leaving: "ease-in duration-200"
+              From: "opacity-100 translate-y-0 sm:scale-100"
+              To: "opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+            -->
+            <div class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full"
+                role="dialog" aria-modal="true" aria-labelledby="modal-headline">
+                <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                    <div class="sm:flex sm:items-start">
+                        <div
+                            class="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-red-100 sm:mx-0 sm:h-10 sm:w-10">
+                            <!-- Heroicon name: exclamation -->
+                            <svg class="h-6 w-6 text-red-600" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                            </svg>
+                        </div>
+                        <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
+                            <h3 class="text-lg leading-6 font-medium text-gray-900" id="modal-headline">
+                                Deactivate account
+                            </h3>
+                            <div class="mt-2">
+                                <p class="text-sm text-gray-500">
+                                    Are you sure you want to deactivate your account? All of your data will be
+                                    permanently removed. This action cannot be undone.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
+                    <button type="button"
+                        class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-red-600 text-base font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:ml-3 sm:w-auto sm:text-sm">
+                        Deactivate
+                    </button>
+                    <button type="button"
+                        class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm">
+                        Cancel
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="fixed inset-0 overflow-hidden">
+        <div class="absolute inset-0 overflow-hidden">
+            <!--
+            Background overlay, show/hide based on slide-over state.
+      
+            Entering: "ease-in-out duration-500"
+              From: "opacity-0"
+              To: "opacity-100"
+            Leaving: "ease-in-out duration-500"
+              From: "opacity-100"
+              To: "opacity-0"
+            -->
+            <div class="absolute inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
+            <section class="absolute inset-y-0 right-0 pl-10 max-w-full flex" aria-labelledby="slide-over-heading">
+                <!--
+                Slide-over panel, show/hide based on slide-over state.
+        
+                Entering: "transform transition ease-in-out duration-500 sm:duration-700"
+                    From: "translate-x-full"
+                    To: "translate-x-0"
+                Leaving: "transform transition ease-in-out duration-500 sm:duration-700"
+                    From: "translate-x-0"
+                    To: "translate-x-full"
+                -->
+                <div class="relative w-screen max-w-md">
+                    <!--
+                    Close button, show/hide based on slide-over state.
+        
+                    Entering: "ease-in-out duration-500"
+                    From: "opacity-0"
+                    To: "opacity-100"
+                    Leaving: "ease-in-out duration-500"
+                    From: "opacity-100"
+                    To: "opacity-0"
+                    -->
+                    <div class="absolute top-0 left-0 -ml-8 pt-4 pr-2 flex sm:-ml-10 sm:pr-4">
+                        <button
+                            class="rounded-md text-gray-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-white">
+                            <span class="sr-only">Close panel</span>
+                            <!-- Heroicon name: x -->
+                            <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="h-full flex flex-col py-6 bg-white shadow-xl overflow-y-scroll">
+                        <div class="px-4 sm:px-6">
+                            <h2 id="slide-over-heading" class="text-lg font-medium text-gray-900">
+                                Notifications
+                            </h2>
+                        </div>
+                        <div class="mt-6 relative flex-1 px-4 sm:px-6">
+                            <div class="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
+
+                                <a href="#" class="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50">
+                                    <svg class="flex-shrink-0 h-6 w-6 text-indigo-600"
+                                        x-description="Heroicon name: chart-bar" xmlns="http://www.w3.org/2000/svg"
+                                        fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z">
+                                        </path>
+                                    </svg>
+                                    <div class="ml-4">
+                                        <p class="text-base font-medium text-gray-900">
+                                            Analytics
+                                        </p>
+                                        <p class="mt-1 text-sm text-gray-500">
+                                            Get a better understanding of where your traffic is coming from.
+                                        </p>
+                                    </div>
+                                </a>
+
+                                <a href="#" class="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50">
+                                    <svg class="flex-shrink-0 h-6 w-6 text-indigo-600"
+                                        x-description="Heroicon name: cursor-click" xmlns="http://www.w3.org/2000/svg"
+                                        fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122">
+                                        </path>
+                                    </svg>
+                                    <div class="ml-4">
+                                        <p class="text-base font-medium text-gray-900">
+                                            Engagement
+                                        </p>
+                                        <p class="mt-1 text-sm text-gray-500">
+                                            Speak directly to your customers in a more meaningful way.
+                                        </p>
+                                    </div>
+                                </a>
+
+                                <a href="#" class="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50">
+                                    <svg class="flex-shrink-0 h-6 w-6 text-indigo-600"
+                                        x-description="Heroicon name: shield-check" xmlns="http://www.w3.org/2000/svg"
+                                        fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z">
+                                        </path>
+                                    </svg>
+                                    <div class="ml-4">
+                                        <p class="text-base font-medium text-gray-900">
+                                            Security
+                                        </p>
+                                        <p class="mt-1 text-sm text-gray-500">
+                                            Your customers' data will be safe and secure.
+                                        </p>
+                                    </div>
+                                </a>
+
+                                <a href="#" class="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50">
+                                    <svg class="flex-shrink-0 h-6 w-6 text-indigo-600"
+                                        x-description="Heroicon name: view-grid" xmlns="http://www.w3.org/2000/svg"
+                                        fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z">
+                                        </path>
+                                    </svg>
+                                    <div class="ml-4">
+                                        <p class="text-base font-medium text-gray-900">
+                                            Integrations
+                                        </p>
+                                        <p class="mt-1 text-sm text-gray-500">
+                                            Connect with third-party tools that you're already using.
+                                        </p>
+                                    </div>
+                                </a>
+
+                                <a href="#" class="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50">
+                                    <svg class="flex-shrink-0 h-6 w-6 text-indigo-600"
+                                        x-description="Heroicon name: refresh" xmlns="http://www.w3.org/2000/svg"
+                                        fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15">
+                                        </path>
+                                    </svg>
+                                    <div class="ml-4">
+                                        <p class="text-base font-medium text-gray-900">
+                                            Automations
+                                        </p>
+                                        <p class="mt-1 text-sm text-gray-500">
+                                            Build strategic funnels that will drive your customers to convert
+                                        </p>
+                                    </div>
+                                </a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <script type="text/javascript" src="./scripts/app.js"></script>
+</body>
+</html>
