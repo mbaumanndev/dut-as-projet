@@ -18,6 +18,8 @@ Les fonctionnalités à implémenter sont :
 - Affichage/masquage de la dropdown au click sur la photo de profil sur desktop
 - La remise à zéro des affichages au redimensionnement de la fenêtre quand la barre des 768px de large est franchie
 
+Les modales, dropdowns, etc, devront être fermées par défaut, à vous de modifier le HTML en suivant les commentaires qui expliquent les affichages. Vous avez le droit de changer des classes et d'ajouter des IDs sur les éléments pour les manipuler en JavaScript ou changer leur visibilité.
+
 ## Utilisation des sources
 
 Pour démarrer le projet, vous devez éxécuter la commande `npm install` la première fois, et `npm run dev` à chaque fois que vous souhaitez lancer le serveur de développement, et écrire votre conde dans le fichier `scripts/app.js`.
