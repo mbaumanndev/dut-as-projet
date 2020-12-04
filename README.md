@@ -20,7 +20,7 @@ Les fonctionnalités à implémenter sont :
 
 ## Utilisation des sources
 
-Pour démarrer le projet, vous devez éxécuter la commande `npm run dev` et écrire votre conde dans le fichier `scripts/app.js`.
+Pour démarrer le projet, vous devez éxécuter la commande `npm install` la première fois, et `npm run dev` à chaque fois que vous souhaitez lancer le serveur de développement, et écrire votre conde dans le fichier `scripts/app.js`.
 
 ## Rendu
 
