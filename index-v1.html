@@ -37,7 +37,7 @@
                 <div class="hidden md:block">
                     <div class="ml-4 flex items-center md:ml-6">
                         <button
-                            id="notifications-desktop"
+                            id="notif-desktop"
                             class="bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
                             <span class="sr-only">View notifications</span>
                             <!-- Heroicon name: bell -->
@@ -70,8 +70,8 @@
                                 From: "transform opacity-100 scale-100"
                                 To: "transform opacity-0 scale-95"
                             -->
-                            <div id="user-menu-drop" style="display: none;" class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 transition ease-out duration-100 transform opacity-0 scale-95"
-                                role="menu" aria-orientation="vertical" aria-labelledby="user-menu">
+                            <div id="dropdown" class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5"
+                                role="menu" aria-orientation="vertical" aria-labelledby="user-menu" style="display: none;">
                                 <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                                     role="menuitem">Your Profile</a>
 
@@ -87,7 +87,7 @@
                 <div class="-mr-2 flex md:hidden">
                     <!-- Mobile menu button -->
                     <button
-                        id="menuBtn"
+                        id="menu-button"
                         class="bg-gray-800 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
                         <span class="sr-only">Open main menu</span>
                         <!--
@@ -95,7 +95,7 @@
             
                         Menu open: "hidden", Menu closed: "block"
                         -->
-                        <svg id="mobile-menu-open" class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                             stroke="currentColor" aria-hidden="true">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M4 6h16M4 12h16M4 18h16" />
@@ -105,7 +105,7 @@
             
                         Menu open: "block", Menu closed: "hidden"
                         -->
-                        <svg id="mobile-menu-close" class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                             stroke="currentColor" aria-hidden="true">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M6 18L18 6M6 6l12 12" />
@@ -120,7 +120,7 @@
     
           Open: "block", closed: "hidden"
         -->
-        <div id="mobile-menu" class="hidden md:hidden">
+        <div id="menu" class="hidden md:hidden">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                 <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
                 <a href="#"
@@ -150,7 +150,7 @@
                         <div class="text-sm font-medium leading-none text-gray-400">tom@example.com</div>
                     </div>
                     <button
-                        id="notifications-mobile"
+                        id="notif-mobile"
                         class="ml-auto bg-gray-800 flex-shrink-0 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
                         <span class="sr-only">View notifications</span>
                         <!-- Heroicon name: bell -->
@@ -184,7 +184,7 @@
             </h1>
         </div>
     </header>
-    <div id="announcement" class="bg-indigo-600">
+    <div id="banner" class="bg-indigo-600">
         <div class="max-w-7xl mx-auto py-3 px-3 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between flex-wrap">
                 <div class="w-0 flex-1 flex items-center">
@@ -213,7 +213,7 @@
                 </div>
                 <div class="order-2 flex-shrink-0 sm:order-3 sm:ml-3">
                     <button type="button"
-                        id="close-announcement"
+                        id="banner-button"
                         class="-mr-1 flex p-2 rounded-md hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-white sm:-mr-2">
                         <span class="sr-only">Dismiss</span>
                         <!-- Heroicon name: x -->
@@ -454,7 +454,7 @@
             From: "opacity-100"
             To: "opacity-0"
             -->
-            <div id="modal-overlay" class="fixed inset-0 transition-opacity ease-out duration-300 opacity-0" aria-hidden="true">
+            <div class="fixed inset-0 transition-opacity" aria-hidden="true">
                 <div class="absolute inset-0 bg-gray-500 opacity-75"></div>
             </div>
 
@@ -470,7 +470,7 @@
               From: "opacity-100 translate-y-0 sm:scale-100"
               To: "opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
             -->
-            <div id="modal-panel" class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full ease-out duration-300 opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+            <div class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full"
                 role="dialog" aria-modal="true" aria-labelledby="modal-headline">
                 <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
                     <div class="sm:flex sm:items-start">
@@ -510,7 +510,7 @@
         </div>
     </div>
 
-    <div id="notif-panel" class="fixed inset-0 overflow-hidden" style="display: none;">
+    <div id="panel" class="fixed inset-0 overflow-hidden" style="display: none;">
         <div class="absolute inset-0 overflow-hidden">
             <!--
             Background overlay, show/hide based on slide-over state.
@@ -522,7 +522,7 @@
               From: "opacity-100"
               To: "opacity-0"
             -->
-            <div id="notif-panel-overlay" class="absolute inset-0 bg-gray-500 bg-opacity-75 transition-opacity ease-in-out duration-500 opacity-0" aria-hidden="true"></div>
+            <div class="absolute inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
             <section class="absolute inset-y-0 right-0 pl-10 max-w-full flex" aria-labelledby="slide-over-heading">
                 <!--
                 Slide-over panel, show/hide based on slide-over state.
@@ -534,7 +534,7 @@
                     From: "translate-x-0"
                     To: "translate-x-full"
                 -->
-                <div id="notif-panel-slide-over" class="relative w-screen max-w-md transform transition ease-in-out duration-500 sm:duration-700 translate-x-full">
+                <div class="relative w-screen max-w-md">
                     <!--
                     Close button, show/hide based on slide-over state.
         
@@ -545,8 +545,9 @@
                     From: "opacity-100"
                     To: "opacity-0"
                     -->
-                    <div id="notif-panel-close" class="absolute top-0 left-0 -ml-8 pt-4 pr-2 flex sm:-ml-10 sm:pr-4 ease-in-out duration-500 opacity-0">
+                    <div class="absolute top-0 left-0 -ml-8 pt-4 pr-2 flex sm:-ml-10 sm:pr-4">
                         <button
+                            id="close-panel"
                             class="rounded-md text-gray-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-white">
                             <span class="sr-only">Close panel</span>
                             <!-- Heroicon name: x -->
@@ -663,6 +664,6 @@
             </section>
         </div>
     </div>
-    <script type="text/javascript" src="./scripts/app.js"></script>
+    <script type="text/javascript" src="./scripts/app-v1.js"></script>
 </body>
 </html>
